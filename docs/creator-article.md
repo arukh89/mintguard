@@ -15,7 +15,7 @@ call to an unverified contract, and the wallet is empty.
 
 So I built the check that runs before the signature: **MintGuard**.
 Live at https://mintguard-psi.vercel.app. Public repo:
-https://github.com/arukh89/mintguard (being published with this article).
+https://github.com/arukh89/mintguard.
 
 ## What it does
 
