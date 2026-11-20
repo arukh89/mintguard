@@ -1,0 +1,5 @@
+node_modules/
+circuits/*.wasm
+circuits/*.zkey
+.env
+/tmp/
