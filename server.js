@@ -15,7 +15,7 @@ const server = http.createServer(async (req, res) => {
       if (raw) {
         try { body = JSON.parse(raw); } catch { return send(res, 400, { ok: false, error: 'invalid JSON' }); }
       }
-      const out = await handle(req.method, req.url, body);
+      const out = await handle(req.method, req.url, body, undefined, req.headers);
       send(res, out.status, out.body, out.headers);
     });
   } catch (e) {

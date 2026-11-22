@@ -42,6 +42,18 @@ Same inputs always give the same verdict — that is the checkable claim:
 `GET /` is a small demo page (form that calls `/analyze`).
 `GET /health`, `GET /policy` (the full scoring table + known selectors).
 
+## Agent wallet login (optional)
+
+The demo console offers an optional login with the Binance Agentic
+Wallet (Agent ID). `GET /auth/challenge` issues an EIP-712 challenge,
+the agent signs it with `baw sign-message` (Developer Mode on), and
+`POST /auth/login` verifies the signature with pure-JS secp256k1
+`ecrecover` — no dependencies — then checks the Agent ID registry
+(`balanceOf > 0`) and issues a 24-hour HMAC bearer token. A logged-in
+session tags `/analyze` responses with `signedInAs`. The guard works
+without login; details and honest limits in
+[`docs/auth-notes.md`](docs/auth-notes.md).
+
 ## Design decisions
 
 1. **Fail closed.** Unknown selectors, unverified contracts, unreachable
@@ -119,7 +131,7 @@ curl -s -X POST https://mintguard-psi.vercel.app/analyze \
 
 ```bash
 npm install
-npm test        # 20 tests: policy, selectors (keccak-verified), HTTP round-trip
+npm test        # 30 tests: policy, selectors (keccak-verified), HTTP round-trip, auth (EIP-712)
 node server.js  # http://localhost:3000
 ```
 

@@ -1,0 +1,45 @@
+{
+  "note": "Throwaway test key generated fresh at fixture time; the private key was never saved. Signature produced by ethers Wallet._signTypedData; the repo verifies it with lib/auth.js only.",
+  "address": "0xDf93EF4BA45BA1f6A325d0968ccF1fAE5eD17B5C",
+  "agentId": "test-agent.ai",
+  "nonce": "0xabababababababababababababababababababababababababababababababab",
+  "expiresAt": 1800000000,
+  "signature": "0x4940fe52481058b31b8ff65b88fba63b252d5d358b87bfe76495549f990160793aca31765b6f0e55c9d1ba5a25045dc6d787393d35ce1bd68f97c05d7cf06faf1c",
+  "typedData": {
+    "types": {
+      "Login": [
+        {
+          "name": "wallet",
+          "type": "address"
+        },
+        {
+          "name": "agentId",
+          "type": "string"
+        },
+        {
+          "name": "nonce",
+          "type": "bytes32"
+        },
+        {
+          "name": "expiresAt",
+          "type": "uint256"
+        }
+      ]
+    },
+    "primaryType": "Login",
+    "domain": {
+      "name": "MintGuard",
+      "version": "1",
+      "chainId": 56
+    },
+    "message": {
+      "wallet": "0xdf93ef4ba45ba1f6a325d0968ccf1fae5ed17b5c",
+      "agentId": "test-agent.ai",
+      "nonce": "0xabababababababababababababababababababababababababababababababab",
+      "expiresAt": 1800000000
+    }
+  },
+  "ethersDigest": "0xd70e0032b0a544eebf9ee28d94b377620932458b34181a837b22b30ea3c3394d",
+  "myDigest": "0xd70e0032b0a544eebf9ee28d94b377620932458b34181a837b22b30ea3c3394d",
+  "publicKey": "0x04093d3283e25a02f054c175240f697ced0902e40dca5aba83db543bf8859d4d921ec44a686d62c1c747cc636f276aa7d0ce12da2feeabee51b74e8ba7b9c8e6fe"
+}
